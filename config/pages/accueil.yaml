@@ -76,16 +76,25 @@ components:
               # Le panneau de citation : l'élément singulier de la page
               - type: container
                 element: aside
-                props: { className: 'lg:col-span-2 flex flex-col justify-center gap-5 rounded-card bg-surface-mint p-8 sm:p-10' }
+                props: { className: 'lg:col-span-2 flex flex-col overflow-hidden rounded-card bg-surface-mint' }
                 children:
-                  - type: text
-                    element: blockquote
-                    props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
-                    content: « Développer de la résilience est une réponse individualiste. Je cherche la réponse collective. »
-                  - type: text
-                    element: p
-                    props: { className: 'text-caption [color:var(--color-foreground-muted)]' }
-                    content: catgo, sur le chemin
+                  - type: image
+                    props:
+                      src: /images/catgo-yourte.jpg
+                      alt: Une yourte verte à la porte orange, face aux montagnes sous un ciel rose de coucher de soleil
+                      loading: eager
+                      className: 'w-full aspect-[4/3] object-cover object-right rounded-none'
+                  - type: flex
+                    props: { className: 'flex flex-col gap-4 p-8 sm:p-10' }
+                    children:
+                      - type: text
+                        element: blockquote
+                        props: { className: 'font-heading text-h3 sm:text-h2 text-balance [color:var(--color-foreground)]' }
+                        content: « Développer de la résilience est une réponse individualiste. Je cherche la réponse collective. »
+                      - type: text
+                        element: p
+                        props: { className: 'text-caption [color:var(--color-foreground-muted)]' }
+                        content: catgo, sur le chemin
 
       # ── Ce que vous vivez peut-être ───────────────────────
       - type: container
@@ -125,17 +134,26 @@ components:
           - type: flex
             props: { className: 'flex flex-col gap-10 mx-auto w-full max-w-6xl' }
             children:
-              - type: flex
-                props: { className: 'flex flex-col gap-4 max-w-2xl' }
+              - type: grid
+                props: { className: 'grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14' }
                 children:
-                  - type: text
-                    element: h2
-                    props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
-                    content: Une approche qui relie le soin et le politique
-                  - type: text
-                    element: p
-                    props: { className: 'text-body [color:var(--color-foreground-muted)]' }
-                    content: Je ne viens pas avec un catalogue de bonnes pratiques. Je viens avec des outils pour que votre collectif regarde ses propres rapports de pouvoir, et invente ses réponses.
+                  - type: flex
+                    props: { className: 'flex flex-col justify-center gap-4' }
+                    children:
+                      - type: text
+                        element: h2
+                        props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                        content: Une approche qui relie le soin et le politique
+                      - type: text
+                        element: p
+                        props: { className: 'text-body [color:var(--color-foreground-muted)]' }
+                        content: Je ne viens pas avec un catalogue de bonnes pratiques. Je viens avec des outils pour que votre collectif regarde ses propres rapports de pouvoir, et invente ses réponses.
+                  - type: image
+                    props:
+                      src: /images/catgo-foret.jpg
+                      alt: catgo debout dans une forêt de lierre, béret rouge et poncho à carreaux
+                      loading: lazy
+                      className: 'w-full aspect-[4/3] object-cover rounded-card'
               - type: grid
                 props: { className: 'grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-3' }
                 children:
@@ -260,16 +278,25 @@ components:
         element: section
         props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16' }
         children:
-          - type: flex
-            props: { className: 'flex flex-col gap-5 mx-auto w-full max-w-3xl' }
+          - type: grid
+            props: { className: 'grid grid-cols-1 items-start gap-8 md:grid-cols-3 md:gap-14 mx-auto w-full max-w-5xl' }
             children:
-              - type: text
-                element: h2
-                props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
-                content: Qui je suis
-              - { type: text, element: p, props: { className: 'text-lead [color:var(--color-foreground)]' }, content: "Exploratrice curieuse, pensée alternative, art de vivre avec le cœur. Mon fil rouge : cultiver l'appartenance." }
-              - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Après des années dans une petite yourte en forêt, je vis aujourd'hui en nomade : chaque semaine un projet, un lieu, des rencontres. Je mets mon énergie là où le soin rejoint la politique, dans des milieux militants, artistiques et de médiation." }
-              - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Je me forme à la facilitation de groupe et aux violences systémiques, et je travaille au sein de communautés de soin féministes et queer. Je connais aussi l'épuisement que ce travail peut provoquer : c'est pour cela que je tiens à ce qu'il se fasse à plusieurs, et à un rythme qui respecte les corps." }
+              - type: image
+                props:
+                  src: /images/catgo-profil.jpg
+                  alt: Portrait de catgo au soleil couchant, chapeau de paille sur la tête
+                  loading: lazy
+                  className: 'w-full max-w-xs aspect-square object-cover rounded-card'
+              - type: flex
+                props: { className: 'flex flex-col gap-5 md:col-span-2' }
+                children:
+                  - type: text
+                    element: h2
+                    props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                    content: Qui je suis
+                  - { type: text, element: p, props: { className: 'text-lead [color:var(--color-foreground)]' }, content: "Exploratrice curieuse, pensée alternative, art de vivre avec le cœur. Mon fil rouge : cultiver l'appartenance." }
+                  - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Après des années dans une petite yourte en forêt, je vis aujourd'hui en nomade : chaque semaine un projet, un lieu, des rencontres. Je mets mon énergie là où le soin rejoint la politique, dans des milieux militants, artistiques et de médiation." }
+                  - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Je me forme à la facilitation de groupe et aux violences systémiques, et je travaille au sein de communautés de soin féministes et queer. Je connais aussi l'épuisement que ce travail peut provoquer : c'est pour cela que je tiens à ce qu'il se fasse à plusieurs, et à un rythme qui respecte les corps." }
 
       # ── Questions ──────────────────────────────────────────
       - type: container
