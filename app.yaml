@@ -1,5 +1,6 @@
 name: catgo
 description: Accompagnement des organisations à la déconstruction des oppressions systémiques
+badge: false
 
 design: { $ref: './config/design.yaml' }
 
