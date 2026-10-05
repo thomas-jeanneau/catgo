@@ -1,0 +1,10 @@
+# Sovrium runtime data (SQLite database, server lock file, file uploads).
+# Relocatable via the SOVRIUM_DATA_DIR env var.
+.sovrium/
+
+# Environment variables (may contain secrets)
+.env
+.env.local
+
+# Static build output (sovrium build)
+dist/

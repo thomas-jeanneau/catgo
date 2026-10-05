@@ -1,0 +1,350 @@
+# Page de vente — accompagnement des organisations (une seule page, statique)
+name: accueil
+path: /
+meta:
+  lang: fr
+  title: catgo — déconstruire les oppressions dans vos organisations
+  description: Un accompagnement féministe, queer et d'éducation populaire pour les collectifs et organisations qui veulent cultiver l'appartenance.
+  og:site_name: catgo
+components:
+  # ── En-tête ───────────────────────────────────────────────
+  - type: container
+    element: header
+    props: { className: 'bg-background px-5 sm:px-8 lg:px-16 py-5 border-b border-border' }
+    children:
+      - type: flex
+        props: { className: 'flex items-center justify-between gap-4 mx-auto w-full max-w-6xl' }
+        children:
+          - type: text
+            element: span
+            props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }
+            content: catgo
+          - type: flex
+            props: { className: 'flex items-center gap-2' }
+            children:
+              - type: link
+                props:
+                  href: '#contact'
+                  className: 'inline-flex items-center rounded-md px-3 h-10 text-sm font-medium text-foreground no-underline hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
+                content: Me contacter
+              - type: theme-toggle
+                label: Changer de thème
+                variant: icon
+
+  - type: container
+    element: div
+    props: { className: 'bg-background' }
+    children:
+      # ── Ouverture ─────────────────────────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16 lg:py-24' }
+        children:
+          - type: grid
+            props: { className: 'grid grid-cols-1 items-stretch gap-10 lg:grid-cols-5 lg:gap-14 mx-auto w-full max-w-6xl' }
+            children:
+              - type: flex
+                props: { className: 'flex flex-col justify-center gap-6 lg:col-span-3' }
+                children:
+                  - type: text
+                    element: p
+                    props: { className: 'text-overline uppercase [color:var(--color-accent)]' }
+                    content: Accompagnement des organisations
+                  - type: text
+                    element: h1
+                    props: { className: 'font-heading text-h1 sm:text-display text-balance [color:var(--color-foreground)]' }
+                    content: Déconstruire les oppressions systémiques, ensemble, depuis l'intérieur de votre organisation
+                  - type: text
+                    element: p
+                    props: { className: 'text-lead text-pretty [color:var(--color-foreground-muted)] max-w-2xl' }
+                    content: Pour les associations, collectifs militants, lieux culturels et équipes qui veulent que l'appartenance ne soit plus réservée à quelques-un·es. Un accompagnement où le soin est politique, et où l'on cherche la réponse collective.
+                  - type: flex
+                    props: { className: 'flex flex-col gap-3 sm:flex-row sm:items-center mt-2' }
+                    children:
+                      - type: link
+                        props:
+                          href: 'https://www.instagram.com/catgoforlife/'
+                          target: _blank
+                          rel: noopener
+                          className: 'inline-flex items-center justify-center rounded-md border border-primary bg-primary text-primary-fg hover:bg-primary-hover hover:text-primary-fg h-12 px-6 font-medium no-underline hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
+                        content: Proposer un premier échange
+                      - type: link
+                        props:
+                          href: '#deroule'
+                          className: 'inline-flex items-center justify-center rounded-md h-12 px-6 font-medium text-foreground underline underline-offset-4 hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
+                        content: Voir comment ça se passe
+              # Le panneau de citation : l'élément singulier de la page
+              - type: container
+                element: aside
+                props: { className: 'lg:col-span-2 flex flex-col justify-center gap-5 rounded-card bg-surface-mint p-8 sm:p-10' }
+                children:
+                  - type: text
+                    element: blockquote
+                    props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                    content: « Développer de la résilience est une réponse individualiste. Je cherche la réponse collective. »
+                  - type: text
+                    element: p
+                    props: { className: 'text-caption [color:var(--color-foreground-muted)]' }
+                    content: catgo, sur le chemin
+
+      # ── Ce que vous vivez peut-être ───────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16 bg-surface-sand' }
+        children:
+          - type: grid
+            props: { className: 'grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-14 mx-auto w-full max-w-6xl' }
+            children:
+              - type: flex
+                props: { className: 'flex flex-col gap-4 lg:col-span-2' }
+                children:
+                  - type: text
+                    element: h2
+                    props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                    content: Ce que vous vivez peut-être
+                  - type: text
+                    element: p
+                    props: { className: 'text-body [color:var(--color-foreground-muted)]' }
+                    content: Les violences systémiques ne disparaissent pas parce qu'une organisation se dit engagée. Elles se logent dans les habitudes, les silences et la façon dont on se répartit le pouvoir.
+              - type: text
+                props:
+                  format: markdown
+                  className: 'lg:col-span-3 text-body [color:var(--color-foreground)] [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-3 [&_li]:marker:text-accent'
+                content: |
+                  - Des personnes se taisent en réunion parce qu'elles pensent ne pas avoir le pouvoir de parler.
+                  - Des discriminations sont vécues mais jamais nommées, ou nommées sans que rien ne change.
+                  - Une charte « inclusion » existe, mais elle reste sur le papier.
+                  - Les personnes concernées portent seules le travail de sensibilisation, jusqu'à l'épuisement.
+                  - L'équipe est fatiguée d'être forte et courageuse, et le conflit fait peur.
+
+      # ── Approche ───────────────────────────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16' }
+        children:
+          - type: flex
+            props: { className: 'flex flex-col gap-10 mx-auto w-full max-w-6xl' }
+            children:
+              - type: flex
+                props: { className: 'flex flex-col gap-4 max-w-2xl' }
+                children:
+                  - type: text
+                    element: h2
+                    props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                    content: Une approche qui relie le soin et le politique
+                  - type: text
+                    element: p
+                    props: { className: 'text-body [color:var(--color-foreground-muted)]' }
+                    content: Je ne viens pas avec un catalogue de bonnes pratiques. Je viens avec des outils pour que votre collectif regarde ses propres rapports de pouvoir, et invente ses réponses.
+              - type: grid
+                props: { className: 'grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-3' }
+                children:
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2 border-t-2 border-primary pt-5' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Féministe et queer }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Lire les situations à travers les rapports de genre, de race, de classe, de validité et d'orientation, pour comprendre ce qui se répète d'une personne à l'autre." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2 border-t-2 border-primary pt-5' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Éducation populaire }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Partir de ce que vivent les personnes, pas d'un savoir descendant. Chacun·e repart avec des mots et des outils, pas seulement des slides." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2 border-t-2 border-primary pt-5' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Le soin des corps }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Parler des violences fatigue le système nerveux. On avance au rythme de ce que chacun·e peut porter, et on respecte les capacités réelles de l'équipe." }
+
+      # ── Déroulé ────────────────────────────────────────────
+      - type: container
+        element: section
+        props: { id: deroule, className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16 bg-surface-sand scroll-mt-4' }
+        children:
+          - type: flex
+            props: { className: 'flex flex-col gap-10 mx-auto w-full max-w-3xl' }
+            children:
+              - type: text
+                element: h2
+                props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                content: Comment se déroule l'accompagnement
+              - type: flex
+                props: { className: 'flex flex-col gap-8' }
+                children:
+                  - type: grid
+                    props: { className: 'grid grid-cols-[3rem_1fr] gap-4' }
+                    children:
+                      - { type: text, element: span, props: { className: 'font-heading text-h2 [color:var(--color-accent)]' }, content: '1' }
+                      - type: flex
+                        props: { className: 'flex flex-col gap-1' }
+                        children:
+                          - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Un premier échange }
+                          - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "On se rencontre, en visio ou en présence. Vous me racontez votre structure, ce qui coince, ce que vous souhaitez. On vérifie ensemble que la confiance est là pour travailler." }
+                  - type: grid
+                    props: { className: 'grid grid-cols-[3rem_1fr] gap-4' }
+                    children:
+                      - { type: text, element: span, props: { className: 'font-heading text-h2 [color:var(--color-accent)]' }, content: '2' }
+                      - type: flex
+                        props: { className: 'flex flex-col gap-1' }
+                        children:
+                          - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Un état des lieux à plusieurs voix }
+                          - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "J'écoute les personnes de l'organisation, en particulier celles qu'on entend le moins. On cartographie ensemble les rapports de pouvoir et les endroits où ça fait mal." }
+                  - type: grid
+                    props: { className: 'grid grid-cols-[3rem_1fr] gap-4' }
+                    children:
+                      - { type: text, element: span, props: { className: 'font-heading text-h2 [color:var(--color-accent)]' }, content: '3' }
+                      - type: flex
+                        props: { className: 'flex flex-col gap-1' }
+                        children:
+                          - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Des ateliers collectifs }
+                          - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Des temps de formation et de partage, construits pour votre équipe : comprendre les oppressions systémiques, se donner un vocabulaire commun, s'exercer à intervenir." }
+                  - type: grid
+                    props: { className: 'grid grid-cols-[3rem_1fr] gap-4' }
+                    children:
+                      - { type: text, element: span, props: { className: 'font-heading text-h2 [color:var(--color-accent)]' }, content: '4' }
+                      - type: flex
+                        props: { className: 'flex flex-col gap-1' }
+                        children:
+                          - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: Des engagements qui tiennent dans la durée }
+                          - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "On transforme ce qui a émergé en pratiques concrètes : façons de décider, de gérer les conflits, de prendre soin. Je reste disponible pour des temps de suivi." }
+
+      # ── Formats ────────────────────────────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16' }
+        children:
+          - type: flex
+            props: { className: 'flex flex-col gap-10 mx-auto w-full max-w-6xl' }
+            children:
+              - type: text
+                element: h2
+                props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                content: Là où vous êtes
+              - type: grid
+                props: { className: 'grid grid-cols-1 gap-6 md:grid-cols-2' }
+                children:
+                  - type: flex
+                    props: { className: 'flex flex-col gap-3 rounded-card bg-surface-sand p-8' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: En présence }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Je vis en nomade et je viens dans vos locaux, vos tiers-lieux, vos festivals. En France, en Espagne, au Portugal, et ailleurs selon les projets." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-3 rounded-card bg-surface-mint p-8' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: En ligne }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Pour les équipes dispersées, ou pour démarrer avant de se retrouver. Les ateliers sont pensés pour la visio, avec des pauses et des petits groupes." }
+              - type: text
+                element: p
+                props: { className: 'text-body [color:var(--color-foreground-muted)] max-w-3xl' }
+                content: "Je travaille en français, en portugais et en anglais."
+
+      # ── Tarifs ─────────────────────────────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16 bg-surface-sand' }
+        children:
+          - type: grid
+            props: { className: 'grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-14 mx-auto w-full max-w-6xl' }
+            children:
+              - type: text
+                element: h2
+                props: { className: 'font-heading lg:col-span-2 text-h2 text-balance [color:var(--color-foreground)]' }
+                content: Tarifs et prix solidaire
+              - type: flex
+                props: { className: 'lg:col-span-3 flex flex-col gap-4' }
+                children:
+                  - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground)]' }, content: "Chaque accompagnement est construit sur mesure. Le tarif dépend de la taille de votre structure, du nombre de temps collectifs et des déplacements. Je vous envoie une proposition après notre premier échange." }
+                  - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground)]' }, content: "Le travail de transformation ne doit pas être réservé aux organisations qui en ont les moyens. Les collectifs bénévoles, les petites associations et les structures portées par des personnes minorisées peuvent demander un prix solidaire. On en parle simplement, ensemble." }
+
+      # ── Qui je suis ────────────────────────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16' }
+        children:
+          - type: flex
+            props: { className: 'flex flex-col gap-5 mx-auto w-full max-w-3xl' }
+            children:
+              - type: text
+                element: h2
+                props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                content: Qui je suis
+              - { type: text, element: p, props: { className: 'text-lead [color:var(--color-foreground)]' }, content: "Exploratrice curieuse, pensée alternative, art de vivre avec le cœur. Mon fil rouge : cultiver l'appartenance." }
+              - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Après des années dans une petite yourte en forêt, je vis aujourd'hui en nomade : chaque semaine un projet, un lieu, des rencontres. Je mets mon énergie là où le soin rejoint la politique, dans des milieux militants, artistiques et de médiation." }
+              - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Je me forme à la facilitation de groupe et aux violences systémiques, et je travaille au sein de communautés de soin féministes et queer. Je connais aussi l'épuisement que ce travail peut provoquer : c'est pour cela que je tiens à ce qu'il se fasse à plusieurs, et à un rythme qui respecte les corps." }
+
+      # ── Questions ──────────────────────────────────────────
+      - type: container
+        element: section
+        props: { className: 'px-5 py-14 sm:px-8 sm:py-20 lg:px-16 bg-surface-sand' }
+        children:
+          - type: flex
+            props: { className: 'flex flex-col gap-8 mx-auto w-full max-w-3xl' }
+            children:
+              - type: text
+                element: h2
+                props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                content: Vos questions
+              - type: flex
+                props: { className: 'flex flex-col gap-8' }
+                children:
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: "Notre organisation n'est pas « militante ». Est-ce pour nous ?" }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Oui. Les oppressions systémiques traversent toutes les organisations, qu'elles soient associatives, culturelles ou professionnelles. Ce qui compte, c'est l'envie de regarder ce qui se passe chez vous." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: "Faut-il déjà s'y connaître ?" }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Non. On part de là où vous en êtes. Les ateliers donnent un vocabulaire commun, sans exiger que chacun·e maîtrise déjà les concepts." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: "Que se passe-t-il si des tensions éclatent pendant l'accompagnement ?" }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "C'est souvent le signe que quelque chose se met en mouvement. Je veille à ce que les espaces restent sûrs pour les personnes les plus exposées, et on prend le temps nécessaire pour traverser le conflit." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: "Combien de temps dure un accompagnement ?" }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Cela dépend de vos besoins : d'un atelier ponctuel à un cheminement sur plusieurs mois. On le décide ensemble, après le premier échange." }
+                  - type: flex
+                    props: { className: 'flex flex-col gap-2' }
+                    children:
+                      - { type: text, element: h3, props: { className: 'font-heading text-h3 [color:var(--color-foreground)]' }, content: "Comment demander un prix solidaire ?" }
+                      - { type: text, element: p, props: { className: 'text-body [color:var(--color-foreground-muted)]' }, content: "Dites-le dès votre premier message. On regarde votre situation ensemble, sans justificatifs à fournir." }
+
+      # ── Contact ────────────────────────────────────────────
+      - type: container
+        element: section
+        props: { id: contact, className: 'px-5 py-16 sm:px-8 sm:py-24 lg:px-16 scroll-mt-4' }
+        children:
+          - type: flex
+            props: { className: 'flex flex-col items-start gap-6 mx-auto w-full max-w-3xl' }
+            children:
+              - type: text
+                element: h2
+                props: { className: 'font-heading text-h2 text-balance [color:var(--color-foreground)]' }
+                content: Et si on commençait par se parler ?
+              - type: text
+                element: p
+                props: { className: 'text-lead [color:var(--color-foreground-muted)]' }
+                content: Écrivez-moi en message privé sur Instagram. Dites-moi en quelques lignes qui vous êtes et ce qui vous amène. Je vous réponds pour fixer un premier échange.
+              - type: link
+                props:
+                  href: 'https://www.instagram.com/catgoforlife/'
+                  target: _blank
+                  rel: noopener
+                  className: 'inline-flex items-center justify-center rounded-md border border-primary bg-primary text-primary-fg hover:bg-primary-hover hover:text-primary-fg h-12 px-6 font-medium no-underline hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
+                content: Écrire à @catgoforlife
+
+  # ── Pied de page ─────────────────────────────────────────
+  - type: container
+    element: footer
+    props: { className: 'bg-background px-5 sm:px-8 lg:px-16 py-8 border-t border-border' }
+    children:
+      - type: flex
+        props: { className: 'flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mx-auto w-full max-w-6xl' }
+        children:
+          - { type: text, element: p, props: { className: 'text-caption [color:var(--color-foreground-muted)]' }, content: "catgo — cultiver l'appartenance" }
+          - type: link
+            props: { href: 'https://www.instagram.com/catgoforlife/', target: _blank, rel: noopener, className: 'text-sm text-foreground underline underline-offset-4' }
+            content: Instagram

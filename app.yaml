@@ -1,0 +1,8 @@
+name: catgo
+description: Accompagnement des organisations à la déconstruction des oppressions systémiques
+
+design: { $ref: './config/design.yaml' }
+
+pages:
+  - $ref: './config/pages/accueil.yaml'
+

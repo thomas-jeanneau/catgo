@@ -1,0 +1,76 @@
+# Design tokens — warm, earthy, calm. Forest green for the one action, terracotta for small accents.
+principles:
+  - Le soin est politique, la page aussi — calme, lisible, jamais tape-à-l'œil
+  - La couleur sert l'action principale et quelques accents, rien d'autre
+  - Les mots de catgo avant les mots du marketing
+
+colorScheme: system
+colors:
+  background: '#faf6ef'
+  foreground: '#1f2a24'
+  foreground-muted: '#4f5b54'
+  primary: '#2f5d46'
+  primary-fg: '#faf6ef'
+  primary-hover: '#244a37'
+  accent: '#a3452a'
+  surface-mint: '#dcefe5'
+  surface-sand: '#f1e6d6'
+  border: '#d9cfc0'
+darkColors:
+  background: '#141a17'
+  foreground: '#efe9df'
+  foreground-muted: '#b9c2bc'
+  primary: '#8cc7a5'
+  primary-fg: '#10231a'
+  primary-hover: '#a5d6b9'
+  accent: '#e48a66'
+  surface-mint: '#1d2b24'
+  surface-sand: '#2a241c'
+  border: '#34403a'
+
+colorRoles:
+  primary:
+    usage: Le bouton d'action principal et les liens. Jamais en fond de section.
+    pairsWith: primary-fg
+  accent:
+    usage: Petits repères (numéros d'étapes, sur-titres). Jamais pour du texte courant.
+  surface-mint:
+    usage: Fond du panneau de citation et du format en ligne.
+  surface-sand:
+    usage: Fond des sections secondaires et du format en présence.
+
+typeScale:
+  families:
+    heading:
+      family: Fraunces
+      fallback: 'Georgia, serif'
+      url: 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600&display=swap'
+    body:
+      family: Work Sans
+      fallback: 'system-ui, sans-serif'
+  steps:
+    display: { size: '3.5rem', lineHeight: 1.08, weight: 600, letterSpacing: '-0.015em', font: heading }
+    h1: { size: '2.5rem', lineHeight: 1.12, weight: 600, letterSpacing: '-0.01em', font: heading }
+    h2: { size: '2rem', lineHeight: 1.2, weight: 600, font: heading }
+    h3: { size: '1.25rem', lineHeight: 1.35, weight: 600, font: heading }
+    lead: { size: '1.25rem', lineHeight: 1.6 }
+    body: { size: '1.0625rem', lineHeight: 1.7 }
+    caption: { size: '0.875rem', lineHeight: 1.5 }
+    overline: { size: '0.8125rem', lineHeight: 1.4, weight: 600, letterSpacing: '0.04em' }
+
+radius:
+  card: '1rem'
+
+voice:
+  pronoun: vous
+  personality:
+    - Parler à la première personne, avec chaleur et sans jargon
+    - Nommer les oppressions sans détour, sans culpabiliser
+    - Écriture inclusive avec le point médian
+  prefer:
+    - Des phrases courtes, des situations concrètes vécues en organisation
+    - Le collectif plutôt que l'individuel
+  avoid:
+    - Pas de promesses chiffrées ni de témoignages inventés
+    - Pas de vocabulaire de croissance ni de performance
+    - Pas d'emoji
